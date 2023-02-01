@@ -17,6 +17,7 @@
 		AE4F763329817FF500DADAEC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4F763229817FF500DADAEC /* DataService.swift */; };
 		AE4F7635298195F500DADAEC /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4F7634298195F500DADAEC /* DetailView.swift */; };
 		AECAF0AF29884ED700B54C3F /* RecipeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECAF0AE29884ED700B54C3F /* RecipeTabView.swift */; };
+		AECAF0B1298ACA3100B54C3F /* RecipeFeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECAF0B0298ACA3100B54C3F /* RecipeFeaturedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		AE4F763229817FF500DADAEC /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		AE4F7634298195F500DADAEC /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		AECAF0AE29884ED700B54C3F /* RecipeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabView.swift; sourceTree = "<group>"; };
+		AECAF0B0298ACA3100B54C3F /* RecipeFeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFeaturedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				AE4F761929817B1A00DADAEC /* RecipeView.swift */,
 				AE4F7634298195F500DADAEC /* DetailView.swift */,
+				AECAF0B0298ACA3100B54C3F /* RecipeFeaturedView.swift */,
 				AECAF0AE29884ED700B54C3F /* RecipeTabView.swift */,
 			);
 			path = Views;
@@ -202,6 +205,7 @@
 				AE4F761A29817B1A00DADAEC /* RecipeView.swift in Sources */,
 				AE4F761829817B1A00DADAEC /* RecipeListAppApp.swift in Sources */,
 				AE4F763329817FF500DADAEC /* DataService.swift in Sources */,
+				AECAF0B1298ACA3100B54C3F /* RecipeFeaturedView.swift in Sources */,
 				AECAF0AF29884ED700B54C3F /* RecipeTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
