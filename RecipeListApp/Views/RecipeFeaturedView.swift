@@ -10,6 +10,7 @@ import SwiftUI
 struct RecipeFeaturedView: View {
     
     @EnvironmentObject var model:RecipeModel
+    @State var tabSelectionIndex = 0
     @State var isDetailViewShowing = false
     
     var body: some View {
@@ -21,10 +22,9 @@ struct RecipeFeaturedView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
             GeometryReader { geo in
-                TabView{
+                TabView(selection: $tabSelectionIndex){
                     ForEach(0..<model.recipes.count, id:\.self){ index in
                         if model.recipes[index].featured {
-                            
                             Button{
                                 self.isDetailViewShowing = true
                             } label: {
@@ -43,16 +43,13 @@ struct RecipeFeaturedView: View {
                                         
                                     }
                                 }
-                            }.sheet(isPresented: $isDetailViewShowing){
+                            }
+                            .sheet(isPresented: $isDetailViewShowing){
                                 DetailView(recipe: model.recipes[index])
                             }
                             .frame(width: geo.size.width-40, height: geo.size.height-100)
                                 .cornerRadius(15)
                                 .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5), radius: 10, x:-5, y: 5)
-
-
-                            
-
 
                         }
                         
@@ -67,10 +64,10 @@ struct RecipeFeaturedView: View {
             VStack(alignment: .leading, spacing: 10){
                 Text("Preperation Time")
                     .font(.headline)
-                Text("1 hour")
+                Text(model.recipes[tabSelectionIndex].prepTime)
                 Text("Highlights")
                     .font(.headline)
-                Text("Healthy, hearty")
+                //Text(model.recipes[tabSelectionIndex].highlights)
             }
             .padding([.leading, .bottom])
         }
