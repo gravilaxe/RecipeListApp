@@ -10,6 +10,7 @@ import SwiftUI
 struct RecipeFeaturedView: View {
     
     @EnvironmentObject var model:RecipeModel
+    @State var isDetailViewShowing = false
     
     var body: some View {
         
@@ -23,23 +24,36 @@ struct RecipeFeaturedView: View {
                 TabView{
                     ForEach(0..<model.recipes.count, id:\.self){ index in
                         if model.recipes[index].featured {
-                            ZStack {
-                                Rectangle()
-                                    .foregroundColor(.white)
-
-                                VStack(spacing: 0 ){
-                                    Image(model.recipes[index].image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .clipped()
-                                    Text(model.recipes[index].name)
-                                        .padding(5)
+                            
+                            Button{
+                                self.isDetailViewShowing = true
+                            } label: {
+                                ZStack {
+                                    Rectangle()
+                                        .foregroundColor(.white)
                                     
+                                    VStack(spacing: 0 ){
+                                        Image(model.recipes[index].image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .clipped()
+                                        Text(model.recipes[index].name)
+                                            .padding(5)
+                                            .foregroundColor(.black)
+                                        
+                                    }
                                 }
+                            }.sheet(isPresented: $isDetailViewShowing){
+                                DetailView(recipe: model.recipes[index])
                             }
                             .frame(width: geo.size.width-40, height: geo.size.height-100)
                                 .cornerRadius(15)
                                 .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5), radius: 10, x:-5, y: 5)
+
+
+                            
+
+
                         }
                         
                         
